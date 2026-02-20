@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 /**
  * 結合テスト ログイン機能①
@@ -38,13 +39,11 @@ public class Case02 {
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
 		
-		webDriver.get("http://localhost:8080/lms");
-		
-		visibilityTimeout(By.tagName("h2"), 10);
+		goTo("http://localhost:8080/lms");		
 		
 		assertEquals("ログイン | LMS", webDriver.getTitle());
 		
-		getEvidence(new Object(){});
+//		getEvidence(new Object(){});
 	}
 
 	@Test
@@ -52,14 +51,14 @@ public class Case02 {
 	@DisplayName("テスト02 DBに登録されていないユーザーでログイン")
 	void test02() {
 		
-		webDriver.get("http://localhost:8080/lms");
-		
-		visibilityTimeout(By.tagName("h2"), 10);
-		
 		//DBに存在しないIDとパスワードを入力してテスト
 		webDriver.findElement(By.name("loginId")).sendKeys("1111111111");
 		webDriver.findElement(By.name("password")).sendKeys("1111111111");
 		webDriver.findElement(By.className("btn-primary")).click();
+		
+		WebElement element = webDriver.findElement(By.className("help-inline"));
+		
+		assertEquals("* ログインに失敗しました。", element.getText());
 		
 		getEvidence(new Object(){});
 	}
