@@ -50,10 +50,12 @@ public class Case03 {
 	@DisplayName("テスト02 初回ログイン済みの受講生ユーザーでログイン")
 	void test02() {
 				
+		//初回ログイン済みの受講生ユーザーを入力してテスト
 		webDriver.findElement(By.name("loginId")).sendKeys("StudentAA01");
 		webDriver.findElement(By.name("password")).sendKeys("StudentAA001");		
 		webDriver.findElement(By.className("btn-primary")).click();		
 		
+		//タイトルタグの記述が一致しているか確認
 		assertEquals("コース詳細 | LMS", webDriver.getTitle());	
 		
 		getEvidence(new Object(){});			
