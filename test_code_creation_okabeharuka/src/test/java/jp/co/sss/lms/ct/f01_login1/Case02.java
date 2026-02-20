@@ -43,7 +43,7 @@ public class Case02 {
 		
 		assertEquals("ログイン | LMS", webDriver.getTitle());
 		
-//		getEvidence(new Object(){});
+		getEvidence(new Object(){});
 	}
 
 	@Test
