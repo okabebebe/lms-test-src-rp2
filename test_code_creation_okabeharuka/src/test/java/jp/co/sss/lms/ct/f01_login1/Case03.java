@@ -54,9 +54,9 @@ public class Case03 {
 		webDriver.findElement(By.name("password")).sendKeys("StudentAA001");		
 		webDriver.findElement(By.className("btn-primary")).click();		
 		
-		getEvidence(new Object(){});
+		assertEquals("コース詳細 | LMS", webDriver.getTitle());	
 		
-		assertEquals("コース詳細 | LMS", webDriver.getTitle());		
+		getEvidence(new Object(){});			
 		
 	}
 
