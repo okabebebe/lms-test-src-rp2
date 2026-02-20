@@ -3,8 +3,6 @@ package jp.co.sss.lms.ct.f01_login1;
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.time.Duration;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -12,8 +10,7 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.By;
 
 /**
  * 結合テスト ログイン機能①
@@ -40,11 +37,10 @@ public class Case01 {
 	@Order(1)
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
-		WebDriverWait wait = new WebDriverWait(webDriver,Duration.ofSeconds(10)); 
 		
 		webDriver.get("http://localhost:8080/lms");
-
-		wait.until(ExpectedConditions.titleIs("ログイン | LMS"));
+		
+		visibilityTimeout(By.tagName("h2"), 10);
 		
 		assertEquals("ログイン | LMS", webDriver.getTitle());
 		
