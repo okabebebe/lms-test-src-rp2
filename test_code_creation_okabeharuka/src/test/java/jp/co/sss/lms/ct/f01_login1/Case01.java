@@ -10,7 +10,6 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.openqa.selenium.By;
 
 /**
  * 結合テスト ログイン機能①
@@ -38,9 +37,7 @@ public class Case01 {
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
 		
-		webDriver.get("http://localhost:8080/lms");
-		
-		visibilityTimeout(By.tagName("h2"), 10);
+		goTo("http://localhost:8080/lms");		
 		
 		assertEquals("ログイン | LMS", webDriver.getTitle());
 		
