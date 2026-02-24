@@ -143,6 +143,11 @@ public class Case05 {
 		
 		getEvidence(new Object(){});		
 		
+		//指定位置までスクロール
+		scrollTo("500");
+		
+		getEvidence(new Object(){}, "searchResult");	
+		
 	}
 	
 	@Test
