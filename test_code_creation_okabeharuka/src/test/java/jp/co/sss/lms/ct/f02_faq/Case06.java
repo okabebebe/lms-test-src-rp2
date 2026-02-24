@@ -135,6 +135,11 @@ public class Case06 {
 		
 		getEvidence(new Object(){});
 		
+		//指定位置までスクロール
+		scrollTo("500");
+		
+		getEvidence(new Object(){}, "searchResult");	
+		
 	}
 
 	@Test
@@ -142,8 +147,6 @@ public class Case06 {
 	@DisplayName("テスト06 検索結果の質問をクリックしその回答を表示")
 	void test06() {
 		
-		//指定位置までスクロール
-		scrollTo("500");
 		
 		//検索結果をすべて取得し、各質問文をクリック
 		List<WebElement> questions = webDriver.findElements(By.className("mb10"));
