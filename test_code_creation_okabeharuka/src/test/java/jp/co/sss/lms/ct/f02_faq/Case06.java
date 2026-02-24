@@ -133,12 +133,10 @@ public class Case06 {
 		assertEquals("Q.キャンセル料・途中退校について", results.get(0).getText());
 		assertEquals("Q.研修の申し込みはどのようにすれば良いですか？", results.get(1).getText());
 		
-		getEvidence(new Object(){});
-		
 		//指定位置までスクロール
 		scrollTo("500");
 		
-		getEvidence(new Object(){}, "searchResult");	
+		getEvidence(new Object(){});	
 		
 	}
 
