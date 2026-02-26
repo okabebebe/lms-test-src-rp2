@@ -138,10 +138,10 @@ public class Case10 {
 		List<WebElement> punches = webDriver.findElements(By.cssSelector("tr"));
 		
 		//出退勤のすべての要素のtdだけをすべて取得
-		List<WebElement> punchIns = punches.get(1).findElements(By.cssSelector("td"));
+		List<WebElement> punchOut = punches.get(1).findElements(By.cssSelector("td"));
 		
 		//取得したすべてのtdの4つ目＝出勤時間の要素を取得し、空ではないかチェック
-		assertTrue(!punchIns.get(3).equals(""));
+		assertTrue(!punchOut.get(3).equals(""));
 		
 		getEvidence(new Object(){});		
 		
