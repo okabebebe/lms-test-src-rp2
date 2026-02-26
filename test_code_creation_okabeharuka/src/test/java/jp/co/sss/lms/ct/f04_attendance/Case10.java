@@ -75,7 +75,7 @@ public class Case10 {
 	@DisplayName("テスト03 上部メニューの「勤怠」リンクから勤怠管理画面に遷移")
 	void test03() {
 		
-		//「ようこそ受講生ＡＡ１さん」リンクをクリック
+		//「勤怠」リンクをクリック
 		webDriver.findElement(By.linkText("勤怠")).click();	
 		
 		Alert alert = webDriver.switchTo().alert();
