@@ -116,7 +116,7 @@ public class Case11 {
 	@DisplayName("テスト05 すべての研修日程の勤怠情報を正しく更新し勤怠管理画面に遷移")
 	void test05() {
 		
-		//「勤怠情報を直接編集する」リンクをクリック
+		//定時ボタンをクリック
 		List<WebElement> attendances = webDriver.findElements(By.className("btn-success"));
 		attendances.get(0).click();
 		
